@@ -3,6 +3,7 @@ package com.api.nequiclone.entity;
 import java.util.Date;
 import org.springframework.data.annotation.CreatedDate;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -25,6 +26,9 @@ public class User {
     @Column(name = "password")
     private String password;
 
+    @Column(name = "role")
+    private String role;
+
     @Column(name = "first_name")
     private String firstName;
 
@@ -42,6 +46,11 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at")
     private Date updatedAt;
+
+    @NotNull
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "account_id", nullable = false, unique = true)
+    private Account account;
 
     @PrePersist
     private void onCreate() {
