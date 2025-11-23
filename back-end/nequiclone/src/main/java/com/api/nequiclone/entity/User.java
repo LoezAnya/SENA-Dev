@@ -47,14 +47,25 @@ public class User {
     @Column(name = "updated_at")
     private Date updatedAt;
 
-    @NotNull
-    @OneToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "account_id", nullable = false, unique = true)
-    private Account account;
+ 
+
 
     @PrePersist
     private void onCreate() {
         this.createdAt = new Date();
+    }
+
+    public User() {
+    }
+
+    public User(User user) {
+        this.identification = user.getIdentification();
+        this.email = user.getEmail();
+        this.password = user.getPassword();
+        this.role = user.getRole();
+        this.firstName = user.getFirstName();
+        this.lastName = user.getLastName();
+        this.phoneNumber = user.getPhoneNumber();
     }
 
 }

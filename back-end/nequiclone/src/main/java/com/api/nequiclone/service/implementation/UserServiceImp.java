@@ -1,23 +1,47 @@
 package com.api.nequiclone.service.implementation;
 
+
+import java.util.Objects;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.api.nequiclone.entity.Account;
 import com.api.nequiclone.entity.User;
+
+import com.api.nequiclone.repository.AccountRepository;
+import com.api.nequiclone.repository.UserRepository;
 import com.api.nequiclone.service.interfaces.UserService;
 
 @Service
 public class UserServiceImp implements UserService {
 
+    @Autowired
+    private UserRepository userRepository;
+    
+    private AccountServiceImp accountServiceImp = new AccountServiceImp();
+
+    @Autowired
+    private AccountRepository accountRepository;
+
     @Override
-    public User createUser(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'createUser'");
-    }
+    public User createUser(User dto) {
+        Objects.requireNonNull(dto, "User dto cannot be null");
+
+        User user = new User(dto);
+        User savedUser = userRepository.save(user);
+
+        Account account = accountServiceImp.createAccount(savedUser);
+        accountRepository.save(account);
+
+        return savedUser;
+     }
 
     @Override
     public User getUserById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getUserById'");
+        return null;
+        
+        
     }
 
     @Override

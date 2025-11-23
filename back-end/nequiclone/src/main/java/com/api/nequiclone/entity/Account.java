@@ -7,6 +7,8 @@ import org.springframework.data.annotation.CreatedDate;
 
 import com.api.nequiclone.enums.AccountStatus;
 import jakarta.persistence.*;
+import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -19,18 +21,30 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @NotNull
     @Column(name = "account_number", nullable = false, unique = true)
     private String accountNumber;
-    private BigDecimal balance;
+
+    @NotNull
+    @DecimalMin(value = "0.0")
+    @Column(name = "balance", nullable = false, precision = 19, scale = 2)
+    private BigDecimal balance = BigDecimal.ZERO;
+
+    @Column(name = "currency", length = 3)
     private String currency;
 
+   
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false, unique = true)
+    @JoinColumn(name = "user_id", unique = true)
     private User user;
 
     @CreatedDate
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;
+
+    @NotNull
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
     private AccountStatus status;
 }

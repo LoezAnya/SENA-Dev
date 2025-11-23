@@ -3,10 +3,11 @@ package com.api.nequiclone.service.interfaces;
 import java.math.BigDecimal;
 
 import com.api.nequiclone.entity.Account;
+import com.api.nequiclone.entity.User;
 
 public interface AccountService {
 
-    Account createAccount(Account account, Long userId);
+    Account createAccount(User user);
 
     Account getAccountById(Long id);
 

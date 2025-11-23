@@ -8,6 +8,8 @@ import com.api.nequiclone.entity.Transaction;
 
 public interface TransactionService {
     
+    Transaction depositMoney(Long accountId, BigDecimal amount, String description);
+
     Transaction transferMoney(Long fromAccountId, String toAccountNumber, BigDecimal amount, String description);
 
     Transaction purchaseMobilePackage(Long accountId, Long packageId, String phoneNumber);
