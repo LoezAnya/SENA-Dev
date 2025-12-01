@@ -19,7 +19,7 @@ public class UserServiceImp implements UserService {
     @Autowired
     private UserRepository userRepository;
     
-    private AccountServiceImp accountServiceImp = new AccountServiceImp();
+    private AccountServiceImp accountServiceImp;
 
     @Autowired
     private AccountRepository accountRepository;

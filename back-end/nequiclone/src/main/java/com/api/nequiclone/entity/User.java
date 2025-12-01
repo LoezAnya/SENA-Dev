@@ -3,7 +3,6 @@ package com.api.nequiclone.entity;
 import java.util.Date;
 import org.springframework.data.annotation.CreatedDate;
 import jakarta.persistence.*;
-import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.Setter;
 
