@@ -7,8 +7,6 @@ import com.api.nequiclone.enums.TransactionStatus;
 import com.api.nequiclone.enums.TransactionType;
 
 import jakarta.persistence.*;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,7 +22,7 @@ public class Transaction {
 
     @Column(name = "amount", nullable = false, precision = 19, scale = 2)
     private BigDecimal amount;
-    
+
     @Enumerated(EnumType.STRING)
     @Column(name = "transaction_type", nullable = false)
     private TransactionType transactionType;
@@ -32,18 +30,32 @@ public class Transaction {
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "from_account_id", nullable = false)
-    private Account fromAccount;
+    @ManyToOne
+    @JoinColumn(name = "account_id")
+    private Account account; // Cuenta origen
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "to_account_id", nullable = false)
-    private Account toAccount;
+    // Relaciones opcionales
+    @ManyToOne
+    @JoinColumn(name = "target_account_id", nullable = true)
+    private Account targetAccount; // Solo para transferencias
+
+    @ManyToOne
+    @JoinColumn(name = "provider_id", nullable = true)
+    private UtilityProvider provider; // Solo para pagos de servicios
+
+    @ManyToOne
+    @JoinColumn(name = "mobile_package_id", nullable = true)
+    private MobilePackage mobilePackage; // Solo para paquetes móviles
+
+    // Campos específicos
+    private Long contractNumber;
+    private String phoneNumber;
+    private Long referenceNumber;
 
     @Column(name = "timestamp", nullable = false)
     private LocalDateTime timestamp;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status", nullable = false)
-    private TransactionStatus status; 
+    private TransactionStatus status;
 }

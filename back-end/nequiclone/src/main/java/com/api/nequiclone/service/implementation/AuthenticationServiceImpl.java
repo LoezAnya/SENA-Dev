@@ -33,12 +33,11 @@ public class AuthenticationServiceImpl implements AuthenticationService {
     }
 
     /**
-     * Login sencillo usando 'identification' en lugar de username.
-     * Retorna "Autenticación satisfactoria" o "Error en la autenticación".
+     * Autenticación sencilla usando 'identification' y 'password'.
      */
     @Override
     public String login(LoginRequestDTO loginRequest) {
-        // Se asume que LoginRequestDTO tiene getIdentification() y getPassword()
+       
         Optional<User> optionalUser = userRepository.findByIdentification(loginRequest.getIdentification());
         if (!optionalUser.isPresent()) {
             return "Error en la autenticación"; // no detallar por seguridad
@@ -69,7 +68,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
         }
 
         User newUser = new User();
-        // Ajustar setters si tu entidad usa otros nombres
+        
         newUser.setIdentification(registrationRequest.getIdentification());
         newUser.setPassword(passwordEncoder.encode(registrationRequest.getPassword()));
         newUser.setEmail(registrationRequest.getEmail());

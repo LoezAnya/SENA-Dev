@@ -14,12 +14,11 @@ import com.api.nequiclone.service.interfaces.AuthenticationService;
 @RestController
 @RequestMapping("/api/v1/auth")
 public class AuthenticationController {
-   private final AuthenticationService authService; 
+    private final AuthenticationService authService;
 
     public AuthenticationController(AuthenticationService authService) {
         this.authService = authService;
     }
-
 
     @PostMapping("/login")
     public ResponseEntity<String> login(@RequestBody LoginRequestDTO request) {
@@ -31,13 +30,11 @@ public class AuthenticationController {
         }
     }
 
-
-
     @PostMapping("/signup")
     public ResponseEntity<?> register(@RequestBody RegistrationRequestDTO request) {
         User user = authService.register(request);
         if (user == null) {
-            // Puede indicar datos inválidos o usuario existente
+
             return ResponseEntity.badRequest().body("Error en el registro (usuario existente o datos inválidos)");
         }
         return ResponseEntity.ok(user);
