@@ -7,9 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import com.api.nequiclone.dto.request.DepositRequestDTO;
 import com.api.nequiclone.dto.request.UtilityPaymentRequestDTO;
+import com.api.nequiclone.dto.response.TransactionResponseDTO;
 import com.api.nequiclone.entity.Transaction;
 import com.api.nequiclone.service.interfaces.TransactionService;
+
+import jakarta.validation.Valid;
 
 @RestController
 @RequestMapping("/api/v1/transactions")
@@ -27,11 +31,9 @@ public class TransactionController {
      * Body: { "accountId": 1, "amount": 100.00, "description": "Depósito inicial" }
      */
     @PostMapping("/deposit")
-    public ResponseEntity<?> deposit(@RequestParam Long accountId,
-            @RequestParam BigDecimal amount,
-            @RequestParam(required = false, defaultValue = "Depósito") String description) {
+    public ResponseEntity<?> deposit(@Valid @RequestBody DepositRequestDTO request) {
         try {
-            Transaction tx = transactionService.depositMoney(accountId, amount, description);
+            TransactionResponseDTO tx = transactionService.depositMoney(request);
             return ResponseEntity.status(HttpStatus.CREATED).body(tx);
         } catch (IllegalStateException e) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());

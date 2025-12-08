@@ -27,7 +27,7 @@ public class MobilePackageServiceImpl implements MobilePackageService {
      */
     @Override
     public List<MobileOperator> getAllActiveOperators() {
-        return operatorRepository.findAllByActiveTrue();
+        return operatorRepository.findAllByStatusTrue();
     }
 
     /**

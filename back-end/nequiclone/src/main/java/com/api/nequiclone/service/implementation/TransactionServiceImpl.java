@@ -8,7 +8,9 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.api.nequiclone.dto.request.DepositRequestDTO;
 import com.api.nequiclone.dto.request.UtilityPaymentRequestDTO;
+import com.api.nequiclone.dto.response.TransactionResponseDTO;
 import com.api.nequiclone.entity.Account;
 import com.api.nequiclone.entity.MobilePackage;
 import com.api.nequiclone.entity.Transaction;
@@ -30,9 +32,9 @@ public class TransactionServiceImpl implements TransactionService {
     private final UtilityProviderRepository utilityProviderRepository;
     
     public TransactionServiceImpl(AccountRepository accountRepository,
-                                  TransactionRepository transactionRepository,
-                                  MobilePackageRepository mobilePackageRepository,
-                                  UtilityProviderRepository utilityProviderRepository) {
+            TransactionRepository transactionRepository,
+            MobilePackageRepository mobilePackageRepository,
+            UtilityProviderRepository utilityProviderRepository) {
         this.accountRepository = accountRepository;
         this.transactionRepository = transactionRepository;
         this.mobilePackageRepository = mobilePackageRepository;
@@ -45,21 +47,22 @@ public class TransactionServiceImpl implements TransactionService {
      */
     @Override
     @Transactional
-    public Transaction depositMoney(Long accountId, BigDecimal amount, String description) {
-        Account account = accountRepository.findById(accountId)
-                .orElseThrow(() -> new IllegalStateException("Cuenta no encontrada: " + accountId));
+    public TransactionResponseDTO depositMoney(DepositRequestDTO depositRequest) {
+        Account account = accountRepository.findById(depositRequest.getAccountId())
+                .orElseThrow(() -> new IllegalStateException("Cuenta no encontrada: " + depositRequest.getAccountId()));
 
-        account.setBalance(account.getBalance().add(amount));
+        account.setBalance(account.getBalance().add(depositRequest.getAmount()));
         accountRepository.save(account);
 
         Transaction tx = new Transaction();
         tx.setAccount(account);
-        tx.setAmount(amount);
-        tx.setDescription(description);
+        tx.setAmount(depositRequest.getAmount());
+        tx.setDescription(depositRequest.getDescription());
         tx.setTransactionType(TransactionType.DEPOSIT);
         tx.setTimestamp(LocalDateTime.now());
         tx.setStatus(TransactionStatus.COMPLETED);
-        return transactionRepository.save(tx);
+        transactionRepository.save(tx);
+        return new TransactionResponseDTO(tx);
     }
 
     /**

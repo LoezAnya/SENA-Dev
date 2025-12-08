@@ -8,10 +8,13 @@ import org.springframework.stereotype.Service;
 import com.api.nequiclone.entity.Account;
 import com.api.nequiclone.entity.User;
 import com.api.nequiclone.enums.AccountStatus;
+import com.api.nequiclone.repository.AccountRepository;
 import com.api.nequiclone.service.interfaces.AccountService;
 
 @Service
 public class AccountServiceImp implements AccountService {
+
+    AccountRepository accountRepository;
 
     @Override
     public Account createAccount(User user) {
@@ -31,6 +34,12 @@ public class AccountServiceImp implements AccountService {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAccountById'");
     }
+
+    public Account getAccountByUserId(Long userId) {
+    
+    return accountRepository.findByUserId(userId)
+            .orElseThrow(() -> new IllegalStateException("Cuenta no encontrada para usuario: " + userId));
+}
 
     @Override
     public Account getAccountByNumber(String accountNumber) {
