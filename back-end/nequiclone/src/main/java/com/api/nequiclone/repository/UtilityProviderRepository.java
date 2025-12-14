@@ -15,15 +15,15 @@ import com.api.nequiclone.enums.UtilityCategory;
 @Repository
 public interface UtilityProviderRepository extends JpaRepository<UtilityProvider, Long> {
 
-    // Buscar proveedores activos por categoría
+    
     List<UtilityProvider> findByCategoryAndStatus(UtilityCategory category, EntityStatus status);
 
-    // Buscar proveedor por nombre y estado activo
+   
     Optional<UtilityProvider> findByNameAndStatus(String name, EntityStatus status);
 
-    // Buscar todos los proveedores activos
+    
     List<UtilityProvider> findAllByStatusTrue();
 
-    // Buscar proveedor por id
+    
     Optional<UtilityProvider> findById(Long id);
 }
