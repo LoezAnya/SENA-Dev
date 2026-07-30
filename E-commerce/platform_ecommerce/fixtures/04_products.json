@@ -1,0 +1,142 @@
+[
+  {
+    "model": "products.product",
+    "pk": 1,
+    "fields": {
+      "seller": 3,
+      "category": 1,
+      "name": "Blusa Floral Manga Larga",
+      "description": "Blusa ligera con estampado floral, ideal para primavera.",
+      "base_price": "18.99",
+      "stock": 120,
+      "images": ["https://picsum.photos/id/1011/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 2,
+    "fields": {
+      "seller": 4,
+      "category": 6,
+      "name": "Camiseta Basica Algodon",
+      "description": "Camiseta 100% algodon, corte unisex, varios colores.",
+      "base_price": "9.99",
+      "stock": 300,
+      "images": ["https://picsum.photos/id/1025/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 3,
+    "fields": {
+      "seller": 3,
+      "category": 3,
+      "name": "Vestido Midi Verano",
+      "description": "Vestido midi de tirantes, tela fresca, perfecto para el dia a dia.",
+      "base_price": "34.50",
+      "stock": 60,
+      "images": ["https://picsum.photos/id/1027/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 4,
+    "fields": {
+      "seller": 4,
+      "category": 7,
+      "name": "Jeans Skinny Tiro Alto",
+      "description": "Jeans skinny de tiro alto con efecto push-up.",
+      "base_price": "27.90",
+      "stock": 85,
+      "images": ["https://picsum.photos/id/1035/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 5,
+    "fields": {
+      "seller": 3,
+      "category": 2,
+      "name": "Falda Plisada",
+      "description": "Falda plisada midi, cintura elastica.",
+      "base_price": "22.00",
+      "stock": 45,
+      "images": [],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 6,
+    "fields": {
+      "seller": 5,
+      "category": 4,
+      "name": "Tenis Urbanos Blancos",
+      "description": "Tenis urbanos unisex, suela antideslizante.",
+      "base_price": "45.00",
+      "stock": 40,
+      "images": ["https://picsum.photos/id/103/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 7,
+    "fields": {
+      "seller": 3,
+      "category": 4,
+      "name": "Sandalias Plataforma",
+      "description": "Sandalias de plataforma con tiras ajustables.",
+      "base_price": "31.75",
+      "stock": 25,
+      "images": ["https://picsum.photos/id/104/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 8,
+    "fields": {
+      "seller": 4,
+      "category": 5,
+      "name": "Bolso Tote Cuero Sintetico",
+      "description": "Bolso tote espacioso, cuero sintetico de alta durabilidad.",
+      "base_price": "39.90",
+      "stock": 30,
+      "images": ["https://picsum.photos/id/1060/1340/1785"],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 9,
+    "fields": {
+      "seller": 5,
+      "category": 5,
+      "name": "Gafas de Sol Ovaladas",
+      "description": "Gafas de sol con proteccion UV400, montura ovalada.",
+      "base_price": "12.50",
+      "stock": 150,
+      "images": [],
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 10,
+    "fields": {
+      "seller": 5,
+      "category": 1,
+      "name": "Chaqueta Denim Oversize",
+      "description": "Chaqueta de mezclilla oversize, descontinuada temporada pasada.",
+      "base_price": "42.00",
+      "stock": 0,
+      "images": ["https://picsum.photos/id/1074/1340/1785"],
+      "is_active": false
+    }
+  }
+]

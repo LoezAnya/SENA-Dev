@@ -1,0 +1,93 @@
+[
+  {
+    "model": "products.productvariant",
+    "pk": 1,
+    "fields": {
+      "product": 2,
+      "color": "Black",
+      "size": "S",
+      "sku": "TEE-BLK-S",
+      "stock": 50,
+      "price_override": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 2,
+    "fields": {
+      "product": 2,
+      "color": "Black",
+      "size": "M",
+      "sku": "TEE-BLK-M",
+      "stock": 80,
+      "price_override": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 3,
+    "fields": {
+      "product": 2,
+      "color": "White",
+      "size": "M",
+      "sku": "TEE-WHT-M",
+      "stock": 70,
+      "price_override": "8.99",
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 4,
+    "fields": {
+      "product": 4,
+      "color": "Blue",
+      "size": "26",
+      "sku": "JEAN-BLU-26",
+      "stock": 20,
+      "price_override": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 5,
+    "fields": {
+      "product": 4,
+      "color": "Blue",
+      "size": "28",
+      "sku": "JEAN-BLU-28",
+      "stock": 35,
+      "price_override": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 6,
+    "fields": {
+      "product": 6,
+      "color": "White",
+      "size": "39",
+      "sku": "SNKR-WHT-39",
+      "stock": 15,
+      "price_override": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productvariant",
+    "pk": 7,
+    "fields": {
+      "product": 6,
+      "color": "White",
+      "size": "40",
+      "sku": "SNKR-WHT-40",
+      "stock": 12,
+      "price_override": "49.00",
+      "is_active": true
+    }
+  }
+]

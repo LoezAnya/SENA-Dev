@@ -1,0 +1,10 @@
+{
+  "username": "newseller_demo",
+  "email": "newseller_demo@example.com",
+  "password": "StrongPass123!",
+  "password_confirm": "StrongPass123!",
+  "role": "seller",
+  "company_name": "Demo Fashion House",
+  "tax_id": "TAX-DEMO-9999",
+  "seller_type": "3P"
+}

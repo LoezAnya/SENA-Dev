@@ -1,0 +1,72 @@
+[
+  {
+    "model": "products.productcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Tops",
+      "slug": "tops",
+      "parent": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Bottoms",
+      "slug": "bottoms",
+      "parent": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Dresses",
+      "slug": "dresses",
+      "parent": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Shoes",
+      "slug": "shoes",
+      "parent": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Accessories",
+      "slug": "accessories",
+      "parent": null,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 6,
+    "fields": {
+      "name": "T-Shirts",
+      "slug": "t-shirts",
+      "parent": 1,
+      "is_active": true
+    }
+  },
+  {
+    "model": "products.productcategory",
+    "pk": 7,
+    "fields": {
+      "name": "Jeans",
+      "slug": "jeans",
+      "parent": 2,
+      "is_active": true
+    }
+  }
+]

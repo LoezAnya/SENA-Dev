@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "rest_framework_simplejwt.token_blacklist",
     "django_ratelimit",
     "corsheaders",
+    "django_filters",
     # Local apps
     "users",
     "products",
@@ -114,10 +115,15 @@ USE_I18N = True
 USE_TZ = True
 
 # ---------------------------------------------------------------------------
-# Static files
+# Static & media files
 # ---------------------------------------------------------------------------
 STATIC_URL = "static/"
+MEDIA_URL = "media/"
+MEDIA_ROOT = BASE_DIR / "media"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+# Product photo upload limits (Sprint 2 spec: 3MB, resized to 1340x1785).
+DATA_UPLOAD_MAX_MEMORY_SIZE = 5 * 1024 * 1024  # 5MB request-body ceiling
 
 # ---------------------------------------------------------------------------
 # Redis cache (used for catalog cache in Sprint 2, sessions here)
@@ -155,6 +161,7 @@ REST_FRAMEWORK = {
     },
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
+    "DEFAULT_FILTER_BACKENDS": ["django_filters.rest_framework.DjangoFilterBackend"],
 }
 
 SIMPLE_JWT = {

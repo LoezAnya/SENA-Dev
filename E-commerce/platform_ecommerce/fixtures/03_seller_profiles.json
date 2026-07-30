@@ -1,0 +1,38 @@
+[
+  {
+    "model": "users.sellerprofile",
+    "pk": 1,
+    "fields": {
+      "user": 3,
+      "company_name": "Style Boutique",
+      "tax_id": "TAX-3P-0001",
+      "seller_type": "3P",
+      "is_verified": true,
+      "commission_rate": "12.00"
+    }
+  },
+  {
+    "model": "users.sellerprofile",
+    "pk": 2,
+    "fields": {
+      "user": 4,
+      "company_name": "Fast Fashion Fulfilled",
+      "tax_id": "TAX-FBP-0002",
+      "seller_type": "FBP",
+      "is_verified": true,
+      "commission_rate": "8.50"
+    }
+  },
+  {
+    "model": "users.sellerprofile",
+    "pk": 3,
+    "fields": {
+      "user": 5,
+      "company_name": "Global Manufacturing Co",
+      "tax_id": "TAX-OEM-0003",
+      "seller_type": "OEM",
+      "is_verified": false,
+      "commission_rate": "5.00"
+    }
+  }
+]

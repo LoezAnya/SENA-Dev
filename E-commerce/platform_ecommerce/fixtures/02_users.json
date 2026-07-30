@@ -1,0 +1,98 @@
+[
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$LhcNPHoQk0le$vOZDcOTjl3XcQR5CuAIXmBOISo+1zeM+jk6x9nzFGt0=",
+      "is_superuser": false,
+      "username": "buyer1",
+      "first_name": "Ana",
+      "last_name": "Gomez",
+      "email": "buyer1@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "role": "buyer",
+      "phone_number": "+57 300 111 2233"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$V0HKYDYFqugz$/S3cGzG1dDX+I0vN9iqvgsmajzVQv0X3bDq9Re9wbZ0=",
+      "is_superuser": false,
+      "username": "buyer2",
+      "first_name": "Carlos",
+      "last_name": "Perez",
+      "email": "buyer2@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "role": "buyer",
+      "phone_number": "+57 300 444 5566"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$D5KBLumPcgkx$fEiYN/rOH14KK8wcIqLN/UsdZRBAheYM6zGPDHmwyQ8=",
+      "is_superuser": false,
+      "username": "seller_3p",
+      "first_name": "Laura",
+      "last_name": "Style Boutique",
+      "email": "seller_3p@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "role": "seller",
+      "phone_number": "+57 301 222 3344"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$YWkjPnnpVbHl$64H3vq3Lw7uRbsycXvZYRmwtakoDBVIs17R38ds0xvI=",
+      "is_superuser": false,
+      "username": "seller_fbp",
+      "first_name": "Fast",
+      "last_name": "Fashion Fulfilled",
+      "email": "seller_fbp@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "role": "seller",
+      "phone_number": "+57 302 333 4455"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$KaxyPbnJnIos$PhyoslEGwXMSuAVyQgZVhtb2u3mO0GFhyEKzVnQu2cM=",
+      "is_superuser": false,
+      "username": "seller_oem",
+      "first_name": "Global",
+      "last_name": "Manufacturing Co",
+      "email": "seller_oem@example.com",
+      "is_staff": false,
+      "is_active": true,
+      "role": "seller",
+      "phone_number": "+57 303 444 5566"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$YvCxwq0g5sVj$2uFGlXWtGyj0foXYdv/WeXyCCe6Hv6HfM9DDfheb/6A=",
+      "is_superuser": true,
+      "username": "admin_demo",
+      "first_name": "Admin",
+      "last_name": "Demo",
+      "email": "admin_demo@example.com",
+      "is_staff": true,
+      "is_active": true,
+      "role": "admin",
+      "phone_number": ""
+    }
+  }
+]

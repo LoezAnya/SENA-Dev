@@ -1,0 +1,8 @@
+{
+  "username": "newbuyer_demo",
+  "email": "newbuyer_demo@example.com",
+  "password": "StrongPass123!",
+  "password_confirm": "StrongPass123!",
+  "role": "buyer",
+  "phone_number": "+57 300 999 0000"
+}
